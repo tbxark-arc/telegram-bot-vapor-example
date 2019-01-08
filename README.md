@@ -6,7 +6,7 @@ Of course you can also use long polling to get the latest news.
 
 # Example
 
-```
+```swift
 
 import Vapor
 import TelegramBotAPI
