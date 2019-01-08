@@ -1,12 +1,9 @@
-# Telegram Bot Server by Vapor
-
-This is a demo of how to create a telegram robot server using [swift-telegram-bot-api](https://github.com/TBXark/swift-telegram-bot-api). This demo created by [vapor](https://github.com/vapor/vapor).
-If you need to use telegram's webhook feature, you will need to deploy this service on the server and use https.
-Of course you can also use long polling to get the latest news.
-
-# Example
-
-```
+//
+//  EchoBotController.swift
+//  App
+//
+//  Created by Tbxark on 2018/12/28.
+//
 
 import Vapor
 import TelegramBotAPI
@@ -17,7 +14,6 @@ class EchoBotController: TelegramBotController {
         try super.boot(router: router)
         router.get(name, token, String.parameter, String.parameter, use: self.quickSend)
     }
-    
 
     /// GET  /:name/:token/:id/:message
     func quickSend(_ req: Request) throws -> Future<TelegramModel<TelegramAPI.Message>> {
@@ -33,8 +29,6 @@ class EchoBotController: TelegramBotController {
         let tgReq = TelegramAPI.sendMessage(chatId: TelegramAPI.ChatId(message.chat.id), text: text)
         let msg: Future<TelegramModel<TelegramAPI.Message>> = try worker.sendTelegramRequest(tgReq, token: token)
         return msg.map({ HookResponse($0)})
-    }   
+    }
+
 }
-
-
-```
