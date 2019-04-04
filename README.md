@@ -4,6 +4,13 @@ This is a demo of how to create a telegram robot server using [swift-telegram-bo
 If you need to use telegram's webhook feature, you will need to deploy this service on the server and use https.
 Of course you can also use long polling to get the latest news.
 
+https://t.me/TBXarkAPIBot
+
+![](./example.png)
+
+
+
+
 # Example
 
 ```swift

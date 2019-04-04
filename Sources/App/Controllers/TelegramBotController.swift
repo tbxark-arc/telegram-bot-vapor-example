@@ -29,13 +29,15 @@ class TelegramBotController: RouteCollection {
         router.get(name, token, "getUpdate", use: self.getUpdate)
         router.post(name, token, use: self.hook)
     }
+        
 
-    /// GET  /:name/"token
+    /// GET  /:name/:token
     func getUpdate(_ req: Request) throws -> Future<TelegramModel<[TelegramAPI.Update]>> {
         let offset: Int? = try? req.query.get(at: "offset")
         let tgReq = TelegramAPI.getUpdates(offset: offset)
         return try req.sendTelegramRequest(tgReq, token: token)
     }
+    
 
     /// POST /:name/:token
     func hook(_ req: Request) throws -> Future<HookResponse> {
