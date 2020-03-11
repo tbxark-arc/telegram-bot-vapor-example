@@ -1,3 +1,5 @@
+![Swift](https://github.com/TBXark/telegram-bot-vapor-example/workflows/Swift/badge.svg)
+
 # Telegram Bot Server by Vapor
 
 This is a demo of how to create a telegram robot server using [swift-telegram-bot-api](https://github.com/TBXark/swift-telegram-bot-api). This demo created by [vapor](https://github.com/vapor/vapor).
