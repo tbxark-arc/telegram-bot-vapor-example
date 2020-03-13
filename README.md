@@ -6,10 +6,10 @@ This is a demo of how to create a telegram robot server using [swift-telegram-bo
 If you need to use telegram's webhook feature, you will need to deploy this service on the server and use https.
 Of course you can also use long polling to get the latest news.
 
-https://t.me/TBXarkAPIBot
+Telegram Bot: https://t.me/VaporEcho_bot
+Demo server: https://telegram-bot-vapor-example.herokuapp.com/
 
 ![](./example.png)
-
 
 
 
@@ -46,4 +46,33 @@ class EchoBotController: TelegramBotController {
 }
 
 
+```
+
+
+# Deploy using Heroku Git
+
+## Install the Heroku CLI
+Download and install the Heroku CLI.
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+```sh
+$ heroku login
+```
+
+## Clone the repository
+Use Git to clone telegram-bot-vapor-example's source code to your local machine.
+
+```sh
+$ heroku git:clone -a telegram-bot-vapor-example
+$ cd telegram-bot-vapor-example
+```
+
+## Deploy your changes
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+```sh
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
 ```

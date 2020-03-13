@@ -7,7 +7,7 @@ public func routes(_ router: Router) throws {
         return "It works!"
     }
 
-    let echo = EchoBotController(name: "VaporEchoBot", token: "767536579:AAEzJntct6DD_p3eVMVA2Y9Biw4VtY8p0RU")
+    let echo = EchoBotController(name: "VaporEchoBot", token: "1095723301:AAGuEgDe6YqvmLBbINKn208MZtNKZtG78jc")
     try router.register(collection: echo)
 
 }

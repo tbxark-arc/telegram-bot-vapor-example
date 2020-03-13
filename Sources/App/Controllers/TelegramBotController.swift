@@ -29,7 +29,7 @@ class TelegramBotController: RouteCollection {
         router.get(name, token, "getUpdate", use: self.getUpdate)
         router.post(name, token, use: self.hook)
     }
-        
+    
 
     /// GET  /:name/:token
     func getUpdate(_ req: Request) throws -> Future<TelegramModel<[TelegramAPI.Update]>> {
