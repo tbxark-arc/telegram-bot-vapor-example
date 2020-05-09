@@ -51,30 +51,9 @@ class EchoBotController: TelegramBotController {
 
 
 
-# Deploy using Heroku Git
-
-## Install the Heroku CLI
-Download and install the Heroku CLI.
-
-If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+# Deploy using docker
 
 ```sh
-$ heroku login
-```
-
-## Clone the repository
-Use Git to clone telegram-bot-vapor-example's source code to your local machine.
-
-```sh
-$ heroku git:clone -a telegram-bot-vapor-example
-$ cd telegram-bot-vapor-example
-```
-
-## Deploy your changes
-Make some changes to the code you just cloned and deploy them to Heroku using Git.
-
-```sh
-$ git add .
-$ git commit -am "make it better"
-$ git push heroku master
+$ docker pull docker.pkg.github.com/tbxark/telegram-bot-vapor-example/telegram-bot:1.0.0
+$ docker run -itd --name telegram docker.pkg.github.com/tbxark/telegram-bot-vapor-example/telegram-bot:1.0.0
 ```
